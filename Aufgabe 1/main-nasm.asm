@@ -10,7 +10,10 @@
 ;	./run
 
 global  main
+global mainMitForLoop;
+global mainMitWhileLoop;
 
+;###########  For Loop  #############
 main:
 	push	ebp
 	mov	ebp, esp
