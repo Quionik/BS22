@@ -27,7 +27,7 @@ getDivisorCountWithForLoop:
 	
 loop:	
 	cmp ecx,ebx						; ueberpruefe ob, ebx und ecx gleich sind, dann gehe in Ende
-	jne	ende
+	je	ende
 	mov eax ,ebx					; uebertrage ebx in eax, um die Dividtion durchzufuehren.
 	mov edx, 0						; setze edx auf null, um den Rest vom Teilen zu erkennen.
 	div ecx								; teile mit ecx
