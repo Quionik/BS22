@@ -15,7 +15,7 @@ global getDivisorCountWithWhileLoop;
 ;###########  For Loop  #############
 getDivisorCountWithForLoop:
 	push ebp							; lege Basispointer auf dem Stack.
-	mov ebp esp						; speichere die Adresse von Stackpointer in Basispointer.
+	mov ebp, esp						; speichere die Adresse von Stackpointer in Basispointer.
 	push ebx							; lege register ebx auf dem Stack.
 	push 0								; lege 0 als Conter auf dem Stack, um Anzahl ganzzahliger Teiler zu bestimmen
 	mov ecx, 1						; definiere Register ecx als Counter, wird. im Luafe des Programm inkr.
@@ -58,7 +58,7 @@ ende:
 ;###########  While Loop  #############
 getDivisorCountWithWhileLoop:
 	push ebp							; lege Basispointer auf dem Stack.
-	mov ebp esp						; speichere die Adresse von Stackpointer in Basispointer.
+	mov ebp ,esp						; speichere die Adresse von Stackpointer in Basispointer.
 	push ebx							; lege register ebx auf dem Stack.
 	push 0								; lege 0 als Conter auf dem Stack, um Anzahl ganzzahliger Teiler zu bestimmen
 	mov ecx, [ebp+12]			; definiere Register ecx als Counter, wird es im Luafe des Programm dekr.

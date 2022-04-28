@@ -10,14 +10,14 @@ int main(){
 	int *result=&zeiger;
 	
 	printf("Bitte geben Sie die Eingabe !\n");
-	scanf("%llu", &num);
+	scanf("%llu", &eingabe);
 	// ueberpruefe der Eingabe 
 	if(eingabe>=0){
 		
 		getDivisorCountWithForLoop(eingabe, result);
 		printf("Das Ergebnis mit For Schleife = %d \n",*result);
 		int ergebnis= getDivisorCountWithWhileLoop(eingabe);
-		rintf("Das Ergebnis mit While Schleife = %d \n",ergebnis);
+		printf("Das Ergebnis mit While Schleife = %d \n",ergebnis);
 		
 	}else if (eingabe > 2147483647){
 		printf("Fehler, falsche Eingabe ,,out of range,,\n");
