@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 //import the two funcs from the asm Code
 extern int getDivisorCountWithWhileLoop(unsigned int value);
 extern void getDivisorCountWithForLoop(int value, int *result);
@@ -12,18 +11,13 @@ int main(){
 	printf("Bitte geben Sie die Eingabe !\n");
 	scanf("%llu", &eingabe);
 	// ueberpruefe der Eingabe 
-	if(eingabe>=0){
+	
 		
 		getDivisorCountWithForLoop(eingabe, result);
 		printf("Das Ergebnis mit For Schleife = %d \n",*result);
-		int ergebnis= getDivisorCountWithWhileLoop(eingabe);
-		printf("Das Ergebnis mit While Schleife = %d \n",ergebnis);
+
+		printf("Das Ergebnis mit While Schleife = %d \n",getDivisorCountWithWhileLoop(eingabe));
 		
-	}else if (eingabe > 2147483647){
-		printf("Fehler, falsche Eingabe ,,out of range,,\n");
-	}else{
-		printf("Fehler, falsche Eingabe in negative \n");
-	}
 	
 
 return 0;

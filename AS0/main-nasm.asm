@@ -25,7 +25,8 @@ getDivisorCountWithForLoop:
 	je ende
 	jne loop
 	
-loop:	
+loop:
+	mov ebx, [ebp+8]
 	cmp ecx,ebx						; ueberpruefe ob, ebx und ecx gleich sind, dann gehe in Ende
 	je	ende
 	mov eax ,ebx					; uebertrage ebx in eax, um die Dividtion durchzufuehren.
@@ -47,7 +48,8 @@ mitRest:
 	jmp loop							; gehe wieder in loop
 			
 ende:				
-	pop eax								; hole Counter aus dem Stack			
+	pop eax	
+	add eax,1						; hole Counter aus dem Stack			
 	mov ecx, [ebp+12]			; hole die Adresse aus dem Parameter
 	mov [ecx], eax				; uebertrage den Counterwert
 	pop ebx								; loesche ebx aus dem Stack
@@ -65,11 +67,13 @@ getDivisorCountWithWhileLoop:
 	mov ebx, [ebp+12] 		; speichere in ebx den Eingabewert.
 	
 loopBedingung:
+   
 	cmp ecx,0							; die Bedingung while(Eingabe==0),wird es im Luafe des Programm dekr.
 	je endeWhileLoop			; bende das Programm, wenn ((Eingabe=0)==0)
 	jne loopKoerper				; gehe in loop Koerper
 	
-loopKoerper:	
+loopKoerper:
+	mov ebx,[ebp+12]	
 	mov eax,ebx						; uebertrage ebx in eax, um die Dividtion durchzufuehren.
 	mov edx,0							; setze edx auf null, um den Rest vom Teilen zu erkennen.
 	div ecx
@@ -89,7 +93,8 @@ mitRestWhileLoop:
 	jmp loopBedingung			; gehe wieder in Loop	Bedingung
 	
 endeWhileLoop:	
-	pop eax								; gebe Anzahl ganzzahliger Teiler
+	pop eax	
+	add eax,1							; gebe Anzahl ganzzahliger Teiler
 	pop ebx								; loesche ebx vom Stack
 	pop ebp								; loesche ebp vom Stack
 	ret			
